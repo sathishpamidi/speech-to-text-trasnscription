@@ -1,0 +1,12 @@
+import speech_recognition as sr
+
+def speech_to_text():
+    r = sr.Recognizer()
+    with sr.AudioFile('/content/drive/MyDrive/sample-3.wav') as source:
+        audio_data = r.record(source)
+    
+    text = r.recognize_google(audio_data)
+    return text
+
+text = speech_to_text()
+print("You said:", text)
